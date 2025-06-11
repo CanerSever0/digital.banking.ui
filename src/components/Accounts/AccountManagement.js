@@ -93,9 +93,7 @@ const AccountCard = ({ account, customer, onViewDetails, onEdit }) => {
         </div>
       </div>
 
-      {/* Hesap İçeriği */}
       <div className="p-4 space-y-4">
-        {/* Müşteri Bilgisi */}
         <div className="flex items-center space-x-3">
           <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
             <Users className="w-4 h-4 text-gray-600" />
@@ -108,7 +106,6 @@ const AccountCard = ({ account, customer, onViewDetails, onEdit }) => {
           </div>
         </div>
 
-        {/* Bakiye */}
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <DollarSign className="w-4 h-4 text-green-600" />
@@ -119,7 +116,6 @@ const AccountCard = ({ account, customer, onViewDetails, onEdit }) => {
           </span>
         </div>
 
-        {/* Hesap Durumu */}
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             {account.status === 'ACTIVE' ? (
@@ -138,7 +134,6 @@ const AccountCard = ({ account, customer, onViewDetails, onEdit }) => {
           </span>
         </div>
 
-        {/* Oluşturma Tarihi */}
         <div className="flex items-center justify-between pt-2 border-t border-gray-100">
           <div className="flex items-center space-x-2">
             <Calendar className="w-4 h-4 text-gray-400" />
@@ -175,7 +170,6 @@ const AccountDetailModal = ({ account, customer, isOpen, onClose, onEdit }) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white rounded-xl w-full max-w-2xl mx-4 max-h-[90vh] overflow-y-auto">
-        {/* Modal Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-200">
           <div className="flex items-center space-x-3">
             <div className={`p-3 ${typeInfo.color} rounded-lg`}>
@@ -191,9 +185,7 @@ const AccountDetailModal = ({ account, customer, isOpen, onClose, onEdit }) => {
           </button>
         </div>
 
-        {/* Modal İçerik */}
         <div className="p-6 space-y-6">
-          {/* Temel Bilgiler */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-gray-900">Account Information</h3>
@@ -258,7 +250,6 @@ const AccountDetailModal = ({ account, customer, isOpen, onClose, onEdit }) => {
             </div>
           </div>
 
-          {/* Tarih Bilgileri */}
           <div className="border-t border-gray-200 pt-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Date Information</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -277,7 +268,6 @@ const AccountDetailModal = ({ account, customer, isOpen, onClose, onEdit }) => {
             </div>
           </div>
 
-          {/* Açıklama */}
           {account.description && (
             <div className="border-t border-gray-200 pt-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Description</h3>
@@ -286,7 +276,6 @@ const AccountDetailModal = ({ account, customer, isOpen, onClose, onEdit }) => {
           )}
         </div>
 
-        {/* Modal Footer */}
         <div className="flex justify-end space-x-3 p-6 border-t border-gray-200">
           <button
             onClick={onClose}
@@ -556,7 +545,6 @@ const AccountManagement = () => {
 
   return (
     <div className="p-6 space-y-6">
-      {/* Header */}
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Account Management</h1>
@@ -571,7 +559,6 @@ const AccountManagement = () => {
         </button>
       </div>
 
-      {/* İstatistik Kartları */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
         <div className="bg-white rounded-xl p-4 border border-gray-100">
           <div className="flex items-center space-x-3">
@@ -634,10 +621,8 @@ const AccountManagement = () => {
         </div>
       </div>
 
-      {/* Arama ve Filtreleme */}
       <div className="bg-white rounded-xl border border-gray-100 p-4">
         <div className="flex flex-col lg:flex-row lg:items-center space-y-4 lg:space-y-0 lg:space-x-4">
-          {/* Arama */}
           <div className="flex-1 relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
             <input
@@ -649,7 +634,6 @@ const AccountManagement = () => {
             />
           </div>
 
-          {/* Filtre Butonu */}
           <button
             onClick={() => setShowFilters(!showFilters)}
             className="flex items-center space-x-2 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
@@ -660,7 +644,6 @@ const AccountManagement = () => {
           </button>
         </div>
 
-        {/* Filtre Seçenekleri */}
         {showFilters && (
           <div className="mt-4 pt-4 border-t border-gray-200">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -695,7 +678,6 @@ const AccountManagement = () => {
         )}
       </div>
 
-      {/* Hesap Listesi */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {filteredAccounts.map((account) => (
           <AccountCard
@@ -708,7 +690,6 @@ const AccountManagement = () => {
         ))}
       </div>
 
-      {/* Sonuç bulunamadı */}
       {filteredAccounts.length === 0 && !loading && (
         <div className="text-center py-12">
           <CreditCard className="w-16 h-16 text-gray-300 mx-auto mb-4" />
@@ -727,7 +708,6 @@ const AccountManagement = () => {
         </div>
       )}
 
-      {/* Modal'lar */}
       <NewAccountModal
         isOpen={showNewAccountModal}
         onClose={() => setShowNewAccountModal(false)}
