@@ -227,13 +227,5 @@ Set the following environment variables for production:
 - `REACT_APP_API_URL`: Backend API URL
 - `NODE_ENV`: Set to 'production' for production builds
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
 
 **Built with ❤️ using React and Tailwind CSS** 
