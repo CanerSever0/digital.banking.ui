@@ -235,14 +235,5 @@ Set the following environment variables for production:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📝 License
-
-This project is private and proprietary. All rights reserved.
-
-## 📞 Support
-
-For support and questions, please contact the development team or create an issue in the project repository.
-
----
 
 **Built with ❤️ using React and Tailwind CSS** 
